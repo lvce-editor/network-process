@@ -10,14 +10,15 @@
     "type-check": "tsc"
   },
   "keywords": [
-    "Lvce Editor"
+    "Lvce Editor",
+    "Network",
+    "Utility"
   ],
   "author": "Lvce Editor",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lvce-editor/lvce-editor.git",
-    "directory": "packages/network-process"
+    "url": "https://github.com/lvce-editor/network-process.git"
   },
   "engines": {
     "node": ">=18"

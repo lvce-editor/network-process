@@ -108,5 +108,9 @@
   },
   "optionalDependencies": {
     "open": "^10.1.0"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
   }
 }

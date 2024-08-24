@@ -4,7 +4,7 @@ import * as Root from '../Root/Root.js'
 import { VError } from '../VError/VError.js'
 
 const getPtyHostPath = () => {
-  return Path.join(Root.root, 'packages', 'pty-host')
+  return Path.join(Root.root, '@lvce-editor', 'pty-host')
 }
 
 const getModule = () => {

@@ -4,7 +4,27 @@ import * as Root from '../Root/Root.js'
 
 export const getElectronRebuildPath = () => {
   if (IsWindows.isWindows) {
-    return Path.join(Root.root, 'packages', 'main-process', 'node_modules', '.bin', 'electron-rebuild.cmd')
+    return Path.join(
+      Root.root,
+      '..',
+      '..',
+      '..',
+      'packages',
+      'main-process',
+      'node_modules',
+      '.bin',
+      'electron-rebuild.cmd',
+    )
   }
-  return Path.join(Root.root, 'packages', 'main-process', 'node_modules', '.bin', 'electron-rebuild')
+  return Path.join(
+    Root.root,
+    '..',
+    '..',
+    '..',
+    'packages',
+    'main-process',
+    'node_modules',
+    '.bin',
+    'electron-rebuild',
+  )
 }

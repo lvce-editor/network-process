@@ -1,11 +1,6 @@
+import * as GetPtyHostPath from '../GetPtyHostPath/GetPtyHostPath.js'
 import * as IsElectron from '../IsElectron/IsElectron.js'
-import * as Path from '../Path/Path.js'
-import * as Root from '../Root/Root.js'
 import { VError } from '../VError/VError.js'
-
-const getPtyHostPath = () => {
-  return Path.join(Root.root, '@lvce-editor', 'pty-host')
-}
 
 const getModule = () => {
   if (IsElectron.isElectron()) {
@@ -16,7 +11,7 @@ const getModule = () => {
 
 export const rebuildNodePty = async () => {
   try {
-    const ptyHostPath = getPtyHostPath()
+    const ptyHostPath = GetPtyHostPath.getPtyHostPath()
     const module = await getModule()
     await module.rebuild(ptyHostPath)
   } catch (error) {

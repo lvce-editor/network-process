@@ -17,6 +17,7 @@ export default [
       'prefer-destructuring': 'off',
       'unicorn/prefer-string-raw': 'off',
       'n/no-process-exit': 'off',
+      'n/no-missing-import': 'off',
 
       '@typescript-eslint/no-deprecated': 'off',
     },

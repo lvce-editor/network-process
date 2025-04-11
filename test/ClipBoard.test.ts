@@ -61,16 +61,31 @@ test('writeFiles - gnome - copied files', async () => {
   })
   await ClipBoard.writeFiles('copy', ['/test/my-folder'])
   expect(Exec.exec).toHaveBeenCalledTimes(3)
-  expect(Exec.exec).toHaveBeenNthCalledWith(1, 'xclip', ['-i', '-selection', 'clipboard', '-t', 'x-special/gnome-copied-files'], {
-    input: `copy
+  expect(Exec.exec).toHaveBeenNthCalledWith(
+    1,
+    'xclip',
+    ['-i', '-selection', 'clipboard', '-t', 'x-special/gnome-copied-files'],
+    {
+      input: `copy
 file:///test/my-folder`,
-  })
-  expect(Exec.exec).toHaveBeenNthCalledWith(2, 'xclip', ['-i', '-selection', 'clipboard', '-t', 'text/uri-list'], {
-    input: 'file:///test/my-folder',
-  })
-  expect(Exec.exec).toHaveBeenNthCalledWith(3, 'xclip', ['-i', '-selection', 'clipboard', '-t', 'text/plain'], {
-    input: '/test/my-folder',
-  })
+    },
+  )
+  expect(Exec.exec).toHaveBeenNthCalledWith(
+    2,
+    'xclip',
+    ['-i', '-selection', 'clipboard', '-t', 'text/uri-list'],
+    {
+      input: 'file:///test/my-folder',
+    },
+  )
+  expect(Exec.exec).toHaveBeenNthCalledWith(
+    3,
+    'xclip',
+    ['-i', '-selection', 'clipboard', '-t', 'text/plain'],
+    {
+      input: '/test/my-folder',
+    },
+  )
 })
 
 test('writeFiles - unsupported desktop', async () => {
@@ -84,5 +99,7 @@ test('writeFiles - unsupported desktop', async () => {
   await ClipBoard.writeFiles('copy', ['/test/my-folder'])
   expect(Exec.exec).not.toHaveBeenCalled()
   expect(consoleSpy).toHaveBeenCalledTimes(1)
-  expect(consoleSpy).toHaveBeenCalledWith('writing files to clipboard is not yet supported on test-desktop')
+  expect(consoleSpy).toHaveBeenCalledWith(
+    'writing files to clipboard is not yet supported on test-desktop',
+  )
 })

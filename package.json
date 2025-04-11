@@ -19,7 +19,9 @@
     "postinstall": "lerna bootstrap --ci",
     "test": "node --unhandled-rejections=warn --experimental-vm-modules ./node_modules/jest/bin/jest.js --detectOpenHandles --forceExit",
     "test:watch": "node --unhandled-rejections=warn --experimental-vm-modules ./node_modules/jest/bin/jest.js --watch",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "build": "node scripts/build.js",
+    "lint": "echo ok"
   },
   "prettier": {
     "semi": false,

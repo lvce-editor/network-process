@@ -16,6 +16,8 @@
   "type": "module",
   "main": "src/networkProcessMain.js",
   "scripts": {
+    "build": "node scripts/build.js",
+    "lint": "eslint .",
     "postinstall": "lerna bootstrap --ci",
     "test": "node --unhandled-rejections=warn --experimental-vm-modules ./node_modules/jest/bin/jest.js --detectOpenHandles --forceExit",
     "test:watch": "node --unhandled-rejections=warn --experimental-vm-modules ./node_modules/jest/bin/jest.js --watch",
@@ -56,6 +58,7 @@
     "trash": "^9.0.0"
   },
   "devDependencies": {
+    "@jest/globals": "^29.7.0",
     "@lerna/legacy-package-management": "^8.2.2",
     "@lvce-editor/eslint-config": "^1.38.0",
     "@types/node": "^20.12.11",

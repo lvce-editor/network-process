@@ -33,6 +33,7 @@ const options = {
     'tar-fs',
     'tmp-promise',
     'trash',
+    'execa',
   ],
   plugins: [
     babel({

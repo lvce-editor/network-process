@@ -34,6 +34,8 @@ const options = {
     'tmp-promise',
     'trash',
     'execa',
+    'open',
+    'electron-clipboard-ex',
   ],
   plugins: [
     babel({

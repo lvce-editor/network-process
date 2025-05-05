@@ -10,7 +10,7 @@ import { default as commonjs } from '@rollup/plugin-commonjs'
  * @type {import('rollup').RollupOptions}
  */
 const options = {
-  input: join(root, 'packages/network-process/src/networkProcessMain.ts'),
+  input: join(root, 'packages/network-process/src/networkProcessMain.js'),
   preserveEntrySignatures: 'strict',
   treeshake: {
     propertyReadSideEffects: false,
@@ -25,7 +25,15 @@ const options = {
     },
     inlineDynamicImports: true,
   },
-  external: ['electron', 'ws'],
+  external: [
+    'electron',
+    'ws',
+    'got',
+    'symlink-dir',
+    'tar-fs',
+    'tmp-promise',
+    'trash',
+  ],
   plugins: [
     babel({
       babelHelpers: 'bundled',

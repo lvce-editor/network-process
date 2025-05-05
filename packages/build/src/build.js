@@ -67,6 +67,19 @@ const packageJson = await readJson(
   join(root, 'packages', 'network-process', 'package.json'),
 )
 
+const getWsVersion = async () => {
+  const { stdout } = await execa('npm', ['ls', 'ws', '--json'], {
+    cwd: join(root, 'packages', 'preview-process'),
+  })
+  const parsed = JSON.parse(stdout)
+  const wsVersion =
+    parsed.dependencies['@lvce-editor/rpc'].dependencies['@lvce-editor/ipc']
+      .dependencies['@lvce-editor/web-socket-server'].dependencies['ws'].version
+  return wsVersion
+}
+
+const wsVersion = await getWsVersion()
+
 delete packageJson.scripts
 delete packageJson.devDependencies
 delete packageJson.prettier
@@ -74,6 +87,10 @@ delete packageJson.jest
 delete packageJson.xo
 delete packageJson.directories
 delete packageJson.nodemonConfig
+delete packageJson.dependencies['@lvce-editor/assert']
+delete packageJson.dependencies['@lvce-editor/rpc']
+delete packageJson.dependencies['@lvce-editor/verror']
+packageJson.dependencies['ws'] = `^${wsVersion}`
 packageJson.version = version
 packageJson.main = 'dist/networkProcessMain.js'
 

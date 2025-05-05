@@ -73,8 +73,7 @@ const getWsVersion = async () => {
   })
   const parsed = JSON.parse(stdout)
   const wsVersion =
-    parsed.dependencies['@lvce-editor/rpc'].dependencies['@lvce-editor/ipc']
-      .dependencies['ws'].version
+    parsed.dependencies['@lvce-editor/ipc'].dependencies['ws'].version
   return wsVersion
 }
 

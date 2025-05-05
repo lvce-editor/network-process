@@ -31,6 +31,7 @@ cd packages/e2e                                     && updateDependencies && cd 
 cd packages/build                                   && updateDependencies && cd ../.. &&
 cd packages/memory                                  && updateDependencies && cd ../.. &&
 cd packages/server                                  && updateDependencies && cd ../.. &&
+cd packages/network-process                         && updateDependencies && cd ../.. &&
 
 echo "Great Success!"
 

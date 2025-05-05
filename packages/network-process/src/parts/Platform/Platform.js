@@ -1,4 +1,4 @@
-const { env, platform } = process
+const { platform } = process
 
 export const applicationName = 'lvce-oss'
 

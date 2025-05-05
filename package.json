@@ -1,16 +1,7 @@
 {
   "name": "@lvce-editor/network-process-monorepo",
   "version": "0.0.0-dev",
-  "description": "Network Process",
-  "keywords": [
-    "Lvce Editor",
-    "Network",
-    "Utility"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/lvce-editor/network-process.git"
-  },
+  "description": "Network Process Monorepo",
   "license": "MIT",
   "author": "Lvce Editor",
   "type": "module",

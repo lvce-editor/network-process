@@ -69,7 +69,7 @@ const packageJson = await readJson(
 
 const getWsVersion = async () => {
   const { stdout } = await execa('npm', ['ls', 'ws', '--json'], {
-    cwd: join(root, 'packages', 'preview-process'),
+    cwd: join(root, 'packages', 'network-process'),
   })
   const parsed = JSON.parse(stdout)
   const wsVersion =

@@ -1,10 +1,11 @@
 import { pipeline } from 'node:stream/promises'
 import { createGunzip } from 'node:zlib'
-import got, { RequestError } from 'got'
 import tar from 'tar-fs'
 import { VError } from '../VError/VError.js'
 
 export const downloadAndExtractTarGz = async ({ url, outDir, strip }) => {
+  const { got, RequestError } = await import('got')
+
   try {
     await pipeline(
       got.stream(url),

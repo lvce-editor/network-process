@@ -20,6 +20,7 @@ export const extractTarBr = async (inFile, outDir) => {
 
 export const extractTarGz = async ({ inFile, outDir, strip }) => {
   try {
+    const { default: tar } = await import('tar-fs')
     await mkdir(outDir, { recursive: true })
     await pipeline(
       createReadStream(inFile),

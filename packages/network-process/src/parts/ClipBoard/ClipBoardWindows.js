@@ -1,8 +1,8 @@
-// @ts-ignore
-import clipboardEx from 'electron-clipboard-ex'
 import { VError } from '../VError/VError.js'
 
 export const readFiles = async () => {
+  // @ts-ignore
+  const clipboardEx = await import('electron-clipboard-ex')
   const filePaths = clipboardEx.readFilePaths()
   console.log(filePaths)
   return {
@@ -14,6 +14,8 @@ export const readFiles = async () => {
 
 export const writeFiles = async (type, files) => {
   try {
+    // @ts-ignore
+    const clipboardEx = await import('electron-clipboard-ex')
     clipboardEx.writeFilePaths(files)
   } catch (error) {
     throw new VError(error, 'Failed to copy files to clipboard')

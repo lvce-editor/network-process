@@ -1,6 +1,5 @@
-import { file, dir } from 'tmp-promise'
-
 export const getTmpFile = async () => {
+  const { file } = await import('tmp-promise')
   const { path } = await file({
     prefix: 'lvce-extension-',
   })
@@ -8,6 +7,7 @@ export const getTmpFile = async () => {
 }
 
 export const getTmpDir = async () => {
+  const { dir } = await import('tmp-promise')
   const { path } = await dir({
     prefix: 'lvce-extension-',
   })

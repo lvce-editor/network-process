@@ -91,6 +91,8 @@ delete packageJson.nodemonConfig
 delete packageJson.dependencies['@lvce-editor/assert']
 delete packageJson.dependencies['@lvce-editor/rpc']
 delete packageJson.dependencies['@lvce-editor/verror']
+delete packageJson.dependencies['@lvce-editor/ipc']
+delete packageJson.dependencies['@lvce-editor/json-rpc']
 packageJson.dependencies['ws'] = `^${wsVersion}`
 packageJson.version = version
 packageJson.main = 'dist/networkProcessMain.js'

@@ -99,5 +99,14 @@ packageJson.main = 'dist/networkProcessMain.js'
 
 await writeJson(join(dist, 'package.json'), packageJson)
 
+await mkdir(join(dist, 'bin'))
+await writeFile(
+  join(dist, 'bin', 'networkProcess.js'),
+  `#!/usr/bin/env node
+
+import '../dist/networkProcessMain.js'
+`,
+)
+
 await cp(join(root, 'README.md'), join(dist, 'README.md'))
 await cp(join(root, 'LICENSE'), join(dist, 'LICENSE'))

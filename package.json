@@ -8,7 +8,7 @@
   "main": "src/networkProcessMain.js",
   "scripts": {
     "build": "node scripts/build.js",
-    "build:watch": "./packages/build/node_modules/.bin/esbuild --format=esm --bundle --platform=node --external:electron-clipboard-ex --external:electron --external:got --external:execa --external:node:buffer --external:electron --external:ws --external:node:worker_threads --watch packages/network-process/src/networkProcessMain.ts --outfile=.tmp/dist/dist/networkProcessMain.js",
+    "build:watch": "./packages/build/node_modules/.bin/esbuild --format=esm --bundle --platform=node --external:open --external:tar-fs --external:execa --external:tmp-promise --external:trash --external:got --external:electron-clipboard-ex --external:electron --external:got --external:execa --external:node:buffer --external:electron --external:ws --external:node:worker_threads --watch packages/network-process/src/networkProcessMain.ts --outfile=packages/network-process/dist/networkProcessMain.js",
     "lint": "eslint .",
     "postinstall": "lerna bootstrap --ci",
     "test": "lerna run test",

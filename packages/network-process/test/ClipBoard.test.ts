@@ -12,7 +12,7 @@ jest.unstable_mockModule('../src/parts/Desktop/Desktop.js', () => ({
   }),
 }))
 
-const Exec = await import('../src/parts/Exec/Exec.js')
+const Exec = await import('../src/parts/Exec/Exec.ts')
 const Desktop = await import('../src/parts/Desktop/Desktop.js')
 const ClipBoard = await import('../src/parts/ClipBoard/ClipBoard.js')
 

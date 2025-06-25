@@ -14,7 +14,7 @@
   "license": "MIT",
   "author": "Lvce Editor",
   "type": "module",
-  "main": "src/networkProcessMain.js",
+  "main": "src/networkProcessMain.ts",
   "bin": {
     "network-process": "bin/networkProcess.js"
   },

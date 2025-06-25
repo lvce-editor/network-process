@@ -21,6 +21,7 @@ export const handleMessage = (event) => {
     Command.execute,
     Callback.resolve,
     prepare,
+    // @ts-ignore
     logError,
     requiresSocket,
   )

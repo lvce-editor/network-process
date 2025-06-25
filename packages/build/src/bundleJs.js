@@ -10,7 +10,7 @@ import { default as commonjs } from '@rollup/plugin-commonjs'
  * @type {import('rollup').RollupOptions}
  */
 const options = {
-  input: join(root, 'packages/network-process/src/networkProcessMain.js'),
+  input: join(root, 'packages/network-process/src/networkProcessMain.ts'),
   preserveEntrySignatures: 'strict',
   treeshake: {
     propertyReadSideEffects: false,

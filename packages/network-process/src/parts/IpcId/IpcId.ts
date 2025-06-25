@@ -1,0 +1,10 @@
+export const EmbedsProcess: number = 2
+export const EmbedsWorker: number = 77
+export const ExtensionHostHelperProcess: number = 3
+export const MainProcess: number = -5
+export const ProcessExplorer: number = 11
+export const SearchProcess: number = 13
+export const SharedProcess: number = 1
+export const TerminalProcess: number = 7
+export const Unknown: number = 0
+export const ProcessExplorerRenderer: number = 33

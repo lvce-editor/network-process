@@ -1,5 +1,5 @@
 import { beforeEach, expect, jest, test } from '@jest/globals'
-import * as ErrorCodes from '../src/parts/ErrorCodes/ErrorCodes.js'
+import * as ErrorCodes from '../src/parts/ErrorCodes/ErrorCodes.ts'
 
 beforeEach(() => {
   jest.resetAllMocks()
@@ -13,7 +13,7 @@ jest.unstable_mockModule('symlink-dir', () => {
   }
 })
 
-const SymLink = await import('../src/parts/SymLink/SymLink.js')
+const SymLink = await import('../src/parts/SymLink/SymLink.ts')
 const symlinkDir = (await import('symlink-dir')).default
 
 class NodeError extends Error {
@@ -29,7 +29,9 @@ test('createSymLink - error', async () => {
   symlinkDir.mockImplementation(() => {
     throw new TypeError('x is not a function')
   })
-  await expect(SymLink.createSymLink('/test/from', '/test/to')).rejects.toThrow(new TypeError('x is not a function'))
+  await expect(SymLink.createSymLink('/test/from', '/test/to')).rejects.toThrow(
+    new TypeError('x is not a function'),
+  )
 })
 
 test('createSymLink - error - EEXIST', async () => {
@@ -37,7 +39,9 @@ test('createSymLink - error - EEXIST', async () => {
   symlinkDir.mockImplementation(async () => {
     throw new NodeError(ErrorCodes.EEXIST)
   })
-  await expect(SymLink.createSymLink('/test/from', '/test/to')).rejects.toHaveProperty('code', ErrorCodes.EEXIST)
+  await expect(
+    SymLink.createSymLink('/test/from', '/test/to'),
+  ).rejects.toHaveProperty('code', ErrorCodes.EEXIST)
 })
 
 test('createSymLink', async () => {

@@ -1,20 +1,20 @@
 import { expect, jest, test, afterEach } from '@jest/globals'
 
-jest.unstable_mockModule('../src/parts/Exec/Exec.js', () => ({
+jest.unstable_mockModule('../src/parts/Exec/Exec.ts', () => ({
   exec: jest.fn(() => {
     throw new Error('not implemented')
   }),
 }))
 
-jest.unstable_mockModule('../src/parts/Desktop/Desktop.js', () => ({
+jest.unstable_mockModule('../src/parts/Desktop/Desktop.ts', () => ({
   getDesktop: jest.fn(() => {
     throw new Error('not implemented')
   }),
 }))
 
 const Exec = await import('../src/parts/Exec/Exec.ts')
-const Desktop = await import('../src/parts/Desktop/Desktop.js')
-const ClipBoard = await import('../src/parts/ClipBoard/ClipBoard.js')
+const Desktop = await import('../src/parts/Desktop/Desktop.ts')
+const ClipBoard = await import('../src/parts/ClipBoard/ClipBoard.ts')
 
 afterEach(() => {
   jest.resetAllMocks()

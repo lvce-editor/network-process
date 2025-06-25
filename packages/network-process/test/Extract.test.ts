@@ -37,7 +37,7 @@ jest.unstable_mockModule('node:stream/promises', () => ({
   }),
 }))
 
-const Extract = await import('../src/parts/Extract/Extract.js')
+const Extract = await import('../src/parts/Extract/Extract.ts')
 const fsPromises = await import('node:fs/promises')
 const fs = await import('node:fs')
 const { default: tar } = await import('tar-fs')
@@ -49,8 +49,12 @@ test('extract - error - EISDIR', async () => {
   fs.createReadStream.mockImplementation((path) => {
     throw new Error(`EISDIR: illegal operation on a directory, read`)
   })
-  await expect(Extract.extractTarBr('/test/folder', '/test/folder')).rejects.toThrow(
-    new Error(`Failed to extract /test/folder: EISDIR: illegal operation on a directory, read`),
+  await expect(
+    Extract.extractTarBr('/test/folder', '/test/folder'),
+  ).rejects.toThrow(
+    new Error(
+      `Failed to extract /test/folder: EISDIR: illegal operation on a directory, read`,
+    ),
   )
 })
 

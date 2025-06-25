@@ -35,7 +35,7 @@ jest.unstable_mockModule('got', () => ({
   },
 }))
 
-const Download = await import('../src/parts/Download/Download.js')
+const Download = await import('../src/parts/Download/Download.ts')
 const fsPromises = await import('node:fs/promises')
 const fs = await import('node:fs')
 const streamPromises = await import('node:stream/promises')

@@ -16,8 +16,8 @@ export const download = async (url: string, outFile: string): Promise<void> => {
       // ignore
     }
     if (error instanceof RequestError) {
-      throw new VError(`Failed to download \"${url}\": ${error.message}`)
+      throw new VError(`Failed to download "${url}": ${error.message}`)
     }
-    throw new VError(error, `Failed to download \"${url}\"`)
+    throw new VError(error, `Failed to download "${url}"`)
   }
 }

@@ -20,6 +20,7 @@ export default [
       'n/no-missing-import': 'off',
 
       '@typescript-eslint/no-deprecated': 'off',
+      'jest/no-restricted-jest-methods': 'off',
     },
   },
 ]

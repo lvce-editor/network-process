@@ -9,8 +9,8 @@
   "scripts": {
     "build": "node scripts/build.js",
     "build:watch": "./packages/build/node_modules/.bin/esbuild --format=esm --bundle --platform=node --external:open --external:tar-fs --external:execa --external:tmp-promise --external:trash --external:got --external:electron-clipboard-ex --external:electron --external:got --external:execa --external:node:buffer --external:electron --external:ws --external:node:worker_threads --watch packages/network-process/src/networkProcessMain.ts --outfile=packages/network-process/dist/networkProcessMain.js",
-    "lint": "eslint .",
     "postinstall": "lerna bootstrap --ci",
+    "lint": "eslint .",
     "test": "lerna run test",
     "type-check": "tsc -b"
   },
@@ -19,12 +19,12 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "@lerna/legacy-package-management": "^8.2.2",
-    "@lvce-editor/eslint-config": "^1.51.0",
-    "eslint": "^9.29.0",
-    "lerna": "^8.2.2",
-    "prettier": "^3.6.1",
-    "typescript": "^5.8.3"
+    "@lerna/legacy-package-management": "^8.2.4",
+    "@lvce-editor/eslint-config": "^1.58.0",
+    "eslint": "^9.33.0",
+    "lerna": "^8.2.3",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.2"
   },
   "engines": {
     "node": ">=22"

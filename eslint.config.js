@@ -12,6 +12,7 @@ export default [
       'unicorn/consistent-function-scoping': 'off',
       '@typescript-eslint/prefer-readonly-parameter-types': 'off',
       'unicorn/no-process-exit': 'off',
+      '@typescript-eslint/no-misused-promises': 'off',
       'no-console': 'off',
       'unicorn/no-array-method-this-argument': 'off',
       'prefer-destructuring': 'off',

@@ -21,6 +21,8 @@ export default [
       'n/no-missing-import': 'off',
 
       '@typescript-eslint/no-deprecated': 'off',
+      '@typescript-eslint/only-throw-error': 'off',
+      '@typescript-eslint/await-thenable': 'off',
       'jest/no-restricted-jest-methods': 'off',
     },
   },

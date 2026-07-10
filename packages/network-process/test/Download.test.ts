@@ -78,6 +78,5 @@ test('download', async () => {
   streamPromises.pipeline.mockImplementation(() => {})
   await Download.download('https://example/file.txt', '/test/folder')
   expect(fsPromises.mkdir).toHaveBeenCalled()
-  // eslint-disable-next-line @typescript-eslint/no-misused-promises
   expect(streamPromises.pipeline).toHaveBeenCalled()
 })

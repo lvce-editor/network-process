@@ -10,9 +10,9 @@ export const readFiles = async (): Promise<{
   const filePaths: string[] = clipboardEx.readFilePaths()
   console.log(filePaths)
   return {
+    files: filePaths,
     source: 'electron-clipboard-ex',
     type: 'copy', // TODO can't be sure on this
-    files: filePaths,
   }
 }
 

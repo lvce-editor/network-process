@@ -1,5 +1,5 @@
 // see https://www.cyberciti.biz/faq/how-do-i-copy-a-file-to-the-clipboard-in-linux
-// see also http://manpages.ubuntu.com/manpages/bionic/man1/xclip.1.html
+// see also https://manpages.ubuntu.com/manpages/bionic/man1/xclip.1.html
 // on gnome, get current selection targets with `xclip -selection clipboard -t TARGETS -o`
 import * as Exec from '../Exec/Exec.ts'
 import * as JoinLines from '../JoinLines/JoinLines.ts'
@@ -41,9 +41,9 @@ export const readFiles = async (): Promise<
   const [type, ...files] = SplitLines.splitLines(result.stdout)
   const actualFiles = files.map(removePrefix)
   return {
+    files: actualFiles,
     source: 'gnomeCopiedFiles',
     type,
-    files: actualFiles,
   }
 }
 

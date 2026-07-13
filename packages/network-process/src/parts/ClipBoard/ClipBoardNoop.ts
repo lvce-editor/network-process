@@ -6,9 +6,9 @@ export const readFiles = async (): Promise<{
   files: any[]
 }> => {
   return {
+    files: [],
     source: 'notSupported',
     type: 'none',
-    files: [],
   }
 }
 

@@ -19,12 +19,12 @@ export const commandMap: Record<string, (...args: any[]) => any> = {
   'Download.getUrl': GetUrl.getUrl,
   'Extract.extractTarBr': Extract.extractTarBr,
   'Extract.extractTarGz': Extract.extractTarGz,
+  'HandleElectronMessagePort.handleElectronMessagePort':
+    HandleElectronMessagePort.handleElectronMessagePort,
   'OpenNativeFolder.openNativeFolder': OpenNativeFolder.openFolder,
   'RebuildNodePty.rebuildNodePty': RebuildNodePty.rebuildNodePty,
   'Symlink.createSymLink': SymLink.createSymLink,
   'TmpFile.getTmpDir': TmpFile.getTmpDir,
   'TmpFile.getTmpFile': TmpFile.getTmpFile,
   'TrashNode.trash': TrashNode.trash,
-  'HandleElectronMessagePort.handleElectronMessagePort':
-    HandleElectronMessagePort.handleElectronMessagePort,
 }

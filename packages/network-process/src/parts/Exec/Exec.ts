@@ -2,8 +2,8 @@ import type { Options } from 'execa'
 import * as Assert from '../Assert/Assert.ts'
 
 export interface ExecResult {
-  stdout: string
   stderr: string
+  stdout: string
 }
 
 export const exec = async (
@@ -15,9 +15,9 @@ export const exec = async (
   Assert.array(args)
   Assert.object(options)
   const { execa } = await import('execa')
-  const { stdout, stderr } = await execa(command, args, options)
+  const { stderr, stdout } = await execa(command, args, options)
   return {
-    stdout: String(stdout),
     stderr: String(stderr),
+    stdout: String(stdout),
   }
 }

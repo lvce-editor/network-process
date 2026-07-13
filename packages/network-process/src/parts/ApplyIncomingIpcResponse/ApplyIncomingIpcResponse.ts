@@ -1,8 +1,8 @@
 import * as HandleIpc from '../HandleIpc/HandleIpc.ts'
 
 interface IpcResponse {
-  type: string
   [key: string]: unknown
+  type: string
 }
 
 export const applyIncomingIpcResponse = async (

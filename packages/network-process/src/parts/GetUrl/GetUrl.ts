@@ -8,6 +8,6 @@ export const getUrl = async ({
   url,
 }: GetUrlOptions): Promise<string> => {
   const { default: got } = await import('got')
-  const json = await got({ url, method: method as any })
-  return json.url.toString()
+  const json = await got({ method: method as any, url })
+  return json.url
 }

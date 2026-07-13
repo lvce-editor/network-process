@@ -3,15 +3,15 @@ import { createGunzip } from 'node:zlib'
 import { VError } from '../VError/VError.ts'
 
 interface DownloadAndExtractOptions {
-  url: string
   outDir: string
   strip: number
+  url: string
 }
 
 export const downloadAndExtractTarGz = async ({
-  url,
   outDir,
   strip,
+  url,
 }: DownloadAndExtractOptions): Promise<void> => {
   const { got, RequestError } = await import('got')
   const { default: tar } = await import('tar-fs')

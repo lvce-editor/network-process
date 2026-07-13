@@ -26,16 +26,16 @@ test('readFiles - gnome - copied files', async () => {
   // @ts-ignore
   Exec.exec.mockImplementation(() => {
     return {
+      stderr: '',
       stdout: `copy
 file:///test/my-folder`,
-      stderr: '',
     }
   })
 
   expect(await ClipBoard.readFiles()).toEqual({
+    files: ['/test/my-folder'],
     source: 'gnomeCopiedFiles',
     type: 'copy',
-    files: ['/test/my-folder'],
   })
 })
 
@@ -49,7 +49,7 @@ test('readFiles - gnome - target not available', async () => {
     error.stderr = 'Error: target x-special/gnome-copied-files not available'
     throw error
   })
-  expect(await ClipBoard.readFiles()).toBe(undefined)
+  expect(await ClipBoard.readFiles()).toBeUndefined()
 })
 
 test('writeFiles - gnome - copied files', async () => {
@@ -57,7 +57,7 @@ test('writeFiles - gnome - copied files', async () => {
   Desktop.getDesktop.mockImplementation(() => 'gnome')
   // @ts-ignore
   Exec.exec.mockImplementation(async () => {
-    return { stdout: '', stderr: '' }
+    return { stderr: '', stdout: '' }
   })
   await ClipBoard.writeFiles('copy', ['/test/my-folder'])
   expect(Exec.exec).toHaveBeenCalledTimes(3)
@@ -93,7 +93,7 @@ test('writeFiles - unsupported desktop', async () => {
   Desktop.getDesktop.mockImplementation(() => 'test-desktop')
   // @ts-ignore
   Exec.exec.mockImplementation(async () => {
-    return { stdout: '', stderr: '' }
+    return { stderr: '', stdout: '' }
   })
   const consoleSpy = jest.spyOn(console, 'info').mockImplementation(() => {})
   await ClipBoard.writeFiles('copy', ['/test/my-folder'])
